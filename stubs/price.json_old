@@ -1,0 +1,26 @@
+{
+    "url_schema": {
+        "store_id": 1,
+        "price": 5,
+        "discount": 3
+    },
+    "file_schema": {
+        "fields": [
+            "store_id",
+            "price"
+              "discount"
+        ]
+    },
+    "field_lengths": {
+        "store_id": 3,
+        "price": 6
+          "discount": 100
+    },
+    "data": {
+      "store_id": 12,
+      "price": 6
+        "discount": 8
+    },
+    "destination_file": "it05.json"
+
+}

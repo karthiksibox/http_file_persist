@@ -1,0 +1,5 @@
+GET http://baseurl/it05.json
+{"url_schema": {"store_id": 1, "price": 5.00}
+"file_schema": ["fields": {"store_id","price"},
+field_lengths:{"store_id": 3,"price": 6}
+}

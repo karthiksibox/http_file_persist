@@ -1,0 +1,12 @@
+-  request:
+      url: ^/it05.json$
+      method: GET
+
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      file: price.json
+
+
+
