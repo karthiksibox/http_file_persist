@@ -1,5 +1,12 @@
 GET http://baseurl/it05.json
-{"url_schema": {"store_id": 1, "price": 5.00}
+{"url_schema": ["store_id", "price"]
 "file_schema": ["fields": {"store_id","price"},
 field_lengths:{"store_id": 3,"price": 6}
 }
+
+fetch data from url 
+pad 0 for numbers @ front 3-> 03
+
+pad ' ' for non numbers @ end 'a'-> 'a '
+
+write to destination_file.
