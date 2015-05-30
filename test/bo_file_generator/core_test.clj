@@ -8,10 +8,22 @@
 
 (deftest should-raise-exception-if-config-misses-mandatory-key
   (testing "mandatory Validation"
-(is (thrown? Exception (dsl/convert (array-map :a 10 :c 33 :c 44)))
+(is (thrown-with-msg? Exception #"Doesn't have needed key.." (dsl/convert (array-map :a 10 :c 33 :c 44)))
+   )
+  )
+
+
+
+
+
+
+
+  (testing "should validate all needed fields"
+(is (= nil (dsl/convert (array-map :url_schema {} :destination_file "" :field_lengths {} :data {})))
    )
   
   )
+  
   )
 
 

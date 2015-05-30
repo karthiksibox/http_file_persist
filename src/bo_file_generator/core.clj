@@ -3,7 +3,7 @@
   )
 
 (defn validate [input validate_for?] 
-  (if (contains? input validate_for?) 1 (throw (Exception. "Doesn't have needed key..")))
+  (cond (not (contains? input validate_for?)) (throw (Exception. "Doesn't have needed key..")))
   )
 
 (defn get_persistable_data[data key]

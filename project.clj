@@ -12,6 +12,10 @@
   :ring {:handler bo-file-generator.handler/app}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
-                        [ring-mock "0.1.5"]]}
+                        [ring-mock "0.1.5"]
+                        [lein-cloverage "1.0.6"]
+                        ]
+
+         }
    
    })
