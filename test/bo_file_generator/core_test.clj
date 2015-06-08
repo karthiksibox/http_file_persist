@@ -12,12 +12,6 @@
    )
   )
 
-
-
-
-
-
-
   (testing "should validate all needed fields"
 (is (= nil (dsl/convert (array-map :url_schema {} :destination_file "" :field_lengths {} :data {})))
    )

@@ -7,7 +7,7 @@
     "file_schema": {
         "fields": [
             "store_id",
-            "price"
+            "price",
               "discount"
         ]
     },
