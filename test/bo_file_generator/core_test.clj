@@ -23,7 +23,7 @@
 
 (deftest should-format-fields-based-on-type
   (testing "Should prepend 0's for numbers"
-(is (= "012" (get_persistable_data {:field_lengths {:store_id 3}, :data {
+(is (= "012" (get_persistable_data {:url_schema nil :destination_file nil :field_lengths {:store_id 3}, :data {
       :store_id 12}} :store_id)
    )
   
@@ -31,7 +31,7 @@
   )
 
   (testing "Should append white space for non numbers"
-(is (= "A    " (get_persistable_data {:field_lengths {:store_name 5}, :data {
+(is (= "A    " (get_persistable_data {:url_schema nil :destination_file nil :field_lengths {:store_name 5}, :data {
       :store_name "A"}} :store_name)
    )
   

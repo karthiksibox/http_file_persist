@@ -16,10 +16,9 @@
 
 (defroutes app-routes
   (GET "/" [] 
-       (fn [req] )
        (def price_config (fetch_config "/it05.json") )
        (dsl/convert (json/read-str  price_config :key-fn keyword)) ;;persisted to file here
-       "Hello World")
+       "Done")
 
   (route/not-found "Not Found"))
 

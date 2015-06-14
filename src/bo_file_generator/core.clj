@@ -1,18 +1,16 @@
 (ns bo-file-generator.core
   (:require [clojure.java.io :as io])
   )
-
-(defn validate [input validate_for?] 
-  (cond (not (contains? input validate_for?)) (throw (Exception. "Doesn't have needed key..")))
-  )
+(def exception_message "Doesn't have needed key.. expected")
+(def mandatory_fields '(:url_schema :destination_file :field_lengths :data))
 
 (defn get_persistable_data[data key]
-( def field_length  (get (get data :field_lengths ) key))
-(def value(get (get data :data) key))
-(cond (= (type value) java.lang.Long)
-(format (str  '%0 field_length 'd) value)  
-:else (format (str  '%- field_length 'S) value)  
-)
+  ( def field_length  (get (get data :field_lengths ) key))
+  (def value(get (get data :data) key))
+  (cond (= (type value) java.lang.Long) 
+        (format (str  '%0 field_length 'd) value)  
+        :else (format (str  '%- field_length 'S) value)  
+  )
 )
 
 
@@ -23,7 +21,7 @@
 
 
 (defn persist [data]
-( def url_schema  (get data :url_schema))
+(def url_schema  (get data :url_schema))
 (def file_name (get data :destination_file))
 (doseq 
   [key  url_schema]
@@ -32,13 +30,20 @@
 )
 )
 
+(defn validate [data mandatory_fields]
+  (loop [mandatory_field mandatory_fields]
+    (when (not (empty? mandatory_field))
+  (cond (contains? data (first mandatory_field)) nil
+    :else (throw (Exception. exception_message)))
+    (recur (rest mandatory_field))
+  )
+)
+)
 
 (defn convert [data] 
-  (validate data :url_schema)
-  (validate data :destination_file)
-  (validate data :field_lengths)
-  (validate data :data)
+  (validate data mandatory_fields)
   (persist data)
 )
+
 
 
