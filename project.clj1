@@ -19,5 +19,8 @@
    
    }
 
+(def foo [project]
+  (println "Do something here first, then make the uberjar.")
+)
 )
   
