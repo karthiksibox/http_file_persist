@@ -1,10 +1,10 @@
-(ns bo-file-generator.handler
+(ns file-generator.handler
   (:require [compojure.core :refer :all]
             [clj-http.client :as client]
             [compojure.route :as route]
             [clojure.data.json :as json]
-            [bo-file-generator.core :as dsl ]
-            [bo-file-generator.config-parser :as read_config ]
+            [file-generator.core :as dsl ]
+            [file-generator.config-parser :as read_config ]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults ]]))
 
 

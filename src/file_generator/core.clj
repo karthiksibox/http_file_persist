@@ -1,4 +1,4 @@
-(ns bo-file-generator.core
+(ns file-generator.core
   (:require [clojure.java.io :as io])
   )
 (def exception_message "Doesn't have needed key.. expected")

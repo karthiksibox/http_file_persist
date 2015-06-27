@@ -1,4 +1,4 @@
-# bo_file_generator
+# file_generator
 
 FIXME
 

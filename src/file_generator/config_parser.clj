@@ -1,4 +1,4 @@
-(ns bo-file-generator.config-parser
+(ns file-generator.config-parser
   (:require [clojure.java.io :as io])
 )
 ;(def config_file "config.properties" )

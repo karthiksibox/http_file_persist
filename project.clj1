@@ -1,4 +1,4 @@
-(defproject bo_file_generator "0.1.0-SNAPSHOT"
+(defproject file_generator "0.1.0-SNAPSHOT"
   :description "persist contents from a http service to a fixed length file"
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.6.0"]

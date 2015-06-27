@@ -1,7 +1,7 @@
-(ns bo-file-generator.handler-test
+(ns file-generator.handler-test
   (:require [clojure.test :refer :all]
             [ring.mock.request :as mock]
-            [bo-file-generator.handler :refer :all]))
+            [file-generator.handler :refer :all]))
 
 (deftest test-app
   (testing "main route"

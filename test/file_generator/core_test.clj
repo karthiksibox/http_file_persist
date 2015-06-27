@@ -1,9 +1,9 @@
-(ns bo-file-generator.core-test
+(ns file-generator.core-test
   (:require [clojure.test :refer :all]
             [ring.mock.request :as mock]
-            [bo-file-generator.core :refer :all]
-            [bo-file-generator.core :as dsl]
-             [bo-file-generator.handler :refer :all]))
+            [file-generator.core :refer :all]
+            [file-generator.core :as dsl]
+            [file-generator.handler :refer :all]))
 
 
 (deftest should-raise-exception-if-config-misses-mandatory-key
