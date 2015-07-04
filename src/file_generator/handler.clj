@@ -11,12 +11,12 @@
 (defn fetch_config [resource]
   (def base_url (read_config/get_config :base_url))
   (get (client/get (str base_url resource)) :body)
-)
+  )
 
 
 (defn file_persist [target]
-       (def price_config (fetch_config target) )
-       (dsl/convert (json/read-str  price_config :key-fn keyword)) ;;persisted to file here
+  (def price_config (fetch_config target) )
+  (dsl/convert (json/read-str  price_config :key-fn keyword)) ;;persisted to file here
   )
 (defroutes app-routes
   (GET "/" [] (file_persist "/it05.json")
