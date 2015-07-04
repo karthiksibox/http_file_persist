@@ -21,8 +21,8 @@
 
 
 (defn persist [data]
-(def url_schema  (get data :url_schema))
-(def file_name (get data :destination_file))
+                            (def url_schema  (get data :url_schema))
+  (def file_name (get data :destination_file))
 (doseq 
   [key  url_schema]
   (writetofile file_name (get_persistable_data data (keyword key)))
@@ -44,6 +44,4 @@
   (validate data mandatory_fields)
   (persist data)
 )
-
-
 

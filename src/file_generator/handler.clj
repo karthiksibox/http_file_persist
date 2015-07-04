@@ -14,13 +14,16 @@
 )
 
 
-(defroutes app-routes
-  (GET "/" [] 
-       (def price_config (fetch_config "/it05.json") )
+(defn file_persist [target]
+       (def price_config (fetch_config target) )
        (dsl/convert (json/read-str  price_config :key-fn keyword)) ;;persisted to file here
+  )
+(defroutes app-routes
+  (GET "/" [] (file_persist "/it05.json")
        "Done")
 
   (route/not-found "Not Found"))
 
 (def app
   (wrap-defaults app-routes site-defaults))
+
