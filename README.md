@@ -10,10 +10,6 @@ You will need [Leiningen][] 2.0.0 or above installed.
 
 ## Running
 
-To start a web server for the application, run:
+ Serve the contents of stubs/ folder over http
+ `run lein generate-file` to persist contents as configured in stubs/
 
-    lein ring server
-
-## License
-
-Copyright © 2015 FIXME
