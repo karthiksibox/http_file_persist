@@ -10,6 +10,7 @@ You will need [Leiningen][] 2.0.0 or above installed.
 
 ## Running
 
- Serve the contents of stubs/ folder over http
- `run lein generate-file` to persist contents as configured in stubs/
+ Serve the contents of stubs/price.json over http
+ `run lein generate-file` 
+ File persist happens according to the configurations in the served json file
 
