@@ -3,7 +3,7 @@
   )
 ;(def config_file "config.properties" )
 
-(defn load-props
+(defn- load-props
   [file-name]
   (with-open [^java.io.Reader reader (clojure.java.io/reader file-name)]
     (let [props (java.util.Properties.)]

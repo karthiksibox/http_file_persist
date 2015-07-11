@@ -6,6 +6,9 @@
                  [ring/ring-defaults "0.1.2"]
                  [clj-http "1.1.2"]
                  [org.clojure/data.json "0.2.6"]
+                 [korma "0.4.0"]
+                 [org.postgresql/postgresql "9.2-1002-jdbc4"]
+                 [clj-time "0.10.0"]
                  ]
   :ring {:handler file-generator.handler/app}
   :plugins [[lein-ring "0.8.13"] 
@@ -21,5 +24,7 @@
 
    }
   :aliases {"generate-file" ["exec" "-ep" "(use 'file-generator.handler) (file_persist \"/it05.json\")"]}
+
+
   )
 

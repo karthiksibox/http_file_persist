@@ -5,6 +5,7 @@
             [clojure.data.json :as json]
             [file-generator.core :as dsl ]
             [file-generator.config-parser :as read_config ]
+            [file-generator.job-tracker :refer [track] ]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults ]]))
 
 
@@ -15,8 +16,12 @@
 
 
 (defn file_persist [target]
+(def start  (System/currentTimeMillis))
   (def price_config (fetch_config target) )
   (dsl/convert (json/read-str  price_config :key-fn keyword)) ;;persisted to file here
+
+  (def end  (System/currentTimeMillis))
+    (track start end)
   )
 (defroutes app-routes
   (GET "/" [] (file_persist "/it05.json")
