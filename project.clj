@@ -17,13 +17,13 @@
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring-mock "0.1.5"]
-                        [lein-cloverage "1.0.6"]
-                        ]
+                        [lein-cloverage "1.0.6"]]
+                        
 
          }
 
    }
-  :aliases {"generate-file" ["exec" "-ep" "(use 'file-generator.handler) (file_persist \"/it05.json\")"]}
+  :aliases {"generate-file" ["exec" "-ep" "(use 'file-generator.handler) (generate-file)"]}
 
 
   )

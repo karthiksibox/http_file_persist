@@ -9,4 +9,15 @@
       file: price.json
 
 
+-  request:
+      url: ^/it06.json$
+      method: GET
+
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      file: price.json
+
+        
 
